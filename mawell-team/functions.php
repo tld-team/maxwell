@@ -286,6 +286,11 @@ add_action('admin_enqueue_scripts', 'tailwind_dashboards_script');
 require get_template_directory() . '/inc/classes/Walker_Nav_Menu.php';
 
 /**
+ * Walker_Nav_Menu
+ */
+require get_template_directory() . '/inc/classes/Maxwell_Block_Finder.php.php';
+
+/**
  * Implement Helper functions for theme
  */
 require get_template_directory() . '/inc/helper-functions.php';
