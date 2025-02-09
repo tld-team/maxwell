@@ -288,7 +288,7 @@ require get_template_directory() . '/inc/classes/Walker_Nav_Menu.php';
 /**
  * Walker_Nav_Menu
  */
-require get_template_directory() . '/inc/classes/Maxwell_Block_Finder.php.php';
+require get_template_directory() . '/inc/classes/Maxwell_Block_Finder.php';
 
 
 /**
