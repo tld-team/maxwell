@@ -290,6 +290,7 @@ require get_template_directory() . '/inc/classes/Walker_Nav_Menu.php';
  */
 require get_template_directory() . '/inc/classes/Maxwell_Block_Finder.php.php';
 
+
 /**
  * Implement Helper functions for theme
  */
