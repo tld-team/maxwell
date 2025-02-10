@@ -3,7 +3,7 @@ $data = get_field( 'service_creative' );
 if ( ! empty( $data ) ):
 ?>
 <!-- Start Services -->
-<section id="services" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+<section id="services" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
     <div class="container">
         <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
             <div class="2xl:py-20">

@@ -2,7 +2,7 @@
 $data = get_field( 'pricing_single' );
 if ( ! empty( $data ) ):
 	?>
-    <section id="pricing" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+    <section id="pricing" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
         <div class="container">
             <div class="grid grid-cols-1 gap-10 lg:grid-cols-3 2xl:px-10">
                 <div class="lg:col-span-3">

@@ -2,7 +2,7 @@
 $data = get_field( 'pricing_hosting' );
 if ( ! empty( $data ) ):
 	?>
-    <section id="pricing" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+    <section id="pricing" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
         <div class="container">
             <div class="mx-auto mb-12 max-w-xl text-center">
 				<?php if ( ! empty( $data['title'] ) ): ?>

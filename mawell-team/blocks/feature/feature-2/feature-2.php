@@ -2,7 +2,7 @@
 $data = get_field( 'feature_2' );
 if ( ! empty( $data ) ):
 	?>
-    <section class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+    <section class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"];; ?>">
         <div class="container">
             <div class="grid items-center gap-6 lg:grid-cols-2">
 				<?php if ( ! empty( $data['image'] ) ): $image = get_image( $data['image'] ); ?>

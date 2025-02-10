@@ -2,7 +2,7 @@
 $data = get_field( 'feature_benefits_ebook' );
 if ( ! empty( $data ) ):
 	?>
-    <section id="benefits" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+    <section id="benefits" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"];; ?>">
         <div class="container">
 			<?php if ( ! empty( $data['top_title'] ) || ! empty( $data['title'] ) || ! empty( $data['content'] ) ): ?>
                 <div class="mx-auto max-w-2xl text-center">

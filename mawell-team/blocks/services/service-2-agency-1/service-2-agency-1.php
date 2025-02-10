@@ -3,7 +3,7 @@ $data = get_field( 'service_2_agency_1' );
 if ( ! empty( $data ) ):
 	?>
     <!-- Start Services -->
-    <section id="serice" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+    <section id="serice" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
         <div class="container">
             <div class="mb-10 flex items-end justify-between">
                 <div class="mx-auto max-w-2xl text-center">

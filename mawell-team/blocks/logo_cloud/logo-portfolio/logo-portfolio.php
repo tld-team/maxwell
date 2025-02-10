@@ -2,7 +2,7 @@
 $data = get_field( 'logo_portfolio' );
 if ( ! empty( $data ) ):
 ?>
-<section class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+<section class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
     <div class="container">
         <div class="grid grid-cols-1 items-center gap-6 xl:grid-cols-6">
             <?php if (! empty($data['title'])): ?>

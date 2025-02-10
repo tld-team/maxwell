@@ -4,7 +4,7 @@ if ( ! empty( $hero_company ) ):
 	$data = $hero_company
 	?>
     <!-- Hero Section Start -->
-    <section id="home" class="relative overflow-hidden bg-primary/5 py-24 lg:py-10 <?php echo $block["className"]; ?>">
+    <section id="home" class="relative overflow-hidden bg-primary/5 py-24 lg:py-10 <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
         <div class="container">
             <div class="mb-10 grid grid-cols-1 items-center gap-x-6 gap-y-12 lg:grid-cols-2">
                 <div class="max-w-xl">

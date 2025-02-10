@@ -11,7 +11,7 @@ $questions = $data['questions' ];
 
 ?>
 <!-- Start Faq -->
-<section id="faq" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+<section id="faq" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"];; ?>">
     <div class="container">
         <?php if ( !empty($top_title) || !empty($title) ): ?>
         <div class="mb-10 flex items-end justify-between">

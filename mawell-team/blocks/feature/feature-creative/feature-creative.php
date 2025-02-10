@@ -1,7 +1,7 @@
 <?php $data = get_field( 'feature_creative' );
 if ( ! empty( $data ) ):
 	?>
-    <section id="features" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+    <section id="features" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"];; ?>">
         <div class="container">
             <div class="mb-10 flex items-end justify-between">
 				<?php if ( ! empty( $data['top_title'] ) || ! empty( $data['title'] ) || ! empty( $data['description'] ) ): ?>

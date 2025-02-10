@@ -7,7 +7,7 @@ $image = get_field( 'hero_agency_2_image' );
 ?>
 <!-- Hero Section Start -->
 <?php if (!empty($bg_image)): ?>
-<section id="home" style="background-image: url(<?php echo $bg_image; ?>);" class="py-10 <?php echo $block["className"]; ?>">
+<section id="home" style="background-image: url(<?php echo $bg_image; ?>);" class="py-10 <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
 <!--    TODO: Dve pozadinske slike-->
     <?php else: ?>
     <section id="home" class="py-10">

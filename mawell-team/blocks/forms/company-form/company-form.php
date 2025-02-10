@@ -2,7 +2,7 @@
 $data = get_field( 'company_form' );
 if ( ! empty( $data ) ):
 	?>
-    <section class="bg-default-100 bg-cover bg-no-repeat py-10 lg:py-20 relative <?php echo $block["className"]; ?>">
+    <section class="bg-default-100 bg-cover bg-no-repeat py-10 lg:py-20 relative <?php echo !empty($block["className"]) ?? $block["className"]; ?>">
 		<?php if ( ! empty( $data['background_image'] ) ): $image = get_image( $data['background_image'] ); ?>
             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"
                  class="absolute inset-0 w-full h-full object-cover pointer-events-none"/>

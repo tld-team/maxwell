@@ -2,7 +2,7 @@
 $data = get_field( 'contact_agency_1' );
 if ( ! empty( $data ) ):
 	?>
-    <section id="contact" class="py-10 lg:py-20 <?php echo $block["className"]; ?>">
+    <section id="contact" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"];; ?>">
         <div class="container">
             <div class="flex flex-wrap items-center justify-around gap-6">
 				<?php foreach ( $data as $index => $d ) : ?>
