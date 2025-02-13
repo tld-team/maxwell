@@ -24,7 +24,7 @@ if ( ! empty( $data ) ):
 				<?php if ( ! empty( $data['image'] ) ): $image = get_image( $data['image'] ); ?>
                     <div class="mt-8">
                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"
-                             srcset="<?php echo $image['srcset']; ?>" class="w-full h-auto object-cover rounded-xl">
+                             srcset="<?php echo $image['srcset']; ?>" class="w-full h-auto object-cover">
                     </div>
 				<?php endif; ?>
             </div>

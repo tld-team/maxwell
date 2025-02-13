@@ -5,7 +5,7 @@ if ( ! empty( $data ) ):
     <section class="relative h-full py-56">
         <div class="container">
 
-			<?php if ( ! empty( $data['image'] ) ): $image = get_image($data['image']) ?>
+			<?php if ( ! empty( $data['image'] ) ): $image = get_image($data['image']); ?>
                 <div class="absolute inset-0">
                     <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" srcset="<?php echo $image['srcset'] ?>" class="h-full w-full object-cover">
                     <div class="absolute inset-0 h-full w-full bg-black/60"></div>
