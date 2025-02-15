@@ -26,7 +26,7 @@
                     <div>
                         <img src="<?php echo get_template_directory_uri() . '/examples/static/images/landing/agency/img-3.jpg' ?>"
                              alt=""
-                             class="h-full max-w-full rounded-lg"/>
+                             class="h-full max-w-full rounded-lg" loading="eager"/>
                     </div>
 	                <?php endif; ?>
 	                <?php if (true): ?>
