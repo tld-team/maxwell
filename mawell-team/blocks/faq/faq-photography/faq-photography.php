@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'faq_photography' );
 if ( ! empty( $data ) ):
 	?>
@@ -12,9 +13,7 @@ if ( ! empty( $data ) ):
                         </span>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['title'] ) ): ?>
-                        <h2 class="my-4 text-3xl font-medium capitalize text-default-950">
-                            <?php echo $data['title']; ?>
-                        </h2>
+						<?php print_heading( $blocks_list, $block['name'], $data['title'], 'my-4 text-3xl font-medium capitalize text-default-950' ); ?>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['content'] ) ): ?>
                         <div class="text-base">

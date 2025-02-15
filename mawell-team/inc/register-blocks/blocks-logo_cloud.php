@@ -35,6 +35,7 @@ function acf_blocks_init_logo_cloud(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/logo_cloud/logo-brands-hosting/logo-brands-hosting.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonial_directory.js',
 		) );
 
 		/** ==============================
@@ -52,6 +53,7 @@ function acf_blocks_init_logo_cloud(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/logo_cloud/logo-portfolio/logo-portfolio.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonial_directory.js',
 		) );
 	}
 }

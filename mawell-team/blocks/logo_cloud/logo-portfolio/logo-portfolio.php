@@ -1,4 +1,6 @@
 <?php
+
+global $blocks_list;
 $data = get_field( 'logo_portfolio' );
 if ( ! empty( $data ) ):
 ?>
@@ -7,9 +9,7 @@ if ( ! empty( $data ) ):
         <div class="grid grid-cols-1 items-center gap-6 xl:grid-cols-6">
             <?php if (! empty($data['title'])): ?>
             <div class="xl:col-span-2">
-                <h2 class="text-3xl font-medium text-default-950 md:text-4xl/tight">
-                    <?php echo $data['title']; ?>
-                </h2>
+	            <?php print_heading( $blocks_list, $block['name'], $data['title'], 'text-3xl font-medium text-default-950 md:text-4xl/tight' ); ?>
             </div>
             <?php endif; ?>
 

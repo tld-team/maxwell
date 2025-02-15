@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $top_title = get_field('feature_agency_2_title');
 $title = get_field('feature_agency_2_top_title');
 $features = get_field('feature_agency_2_features');
@@ -16,9 +17,7 @@ $icon_type = get_field('feature_agency_2_icon_type');
                 </span>
                 <?php endif; ?>
                 <?php if ( !empty($title) ): ?>
-                <h2 class="my-4 text-4xl font-medium capitalize text-default-950">
-                    <?php echo $title; ?>
-                </h2>
+	                <?php print_heading( $blocks_list, $block['name'], $title, 'my-4 text-4xl font-medium capitalize text-default-950"' ); ?>
                 <?php endif; ?>
             </div>
         </div><!-- flex End-->

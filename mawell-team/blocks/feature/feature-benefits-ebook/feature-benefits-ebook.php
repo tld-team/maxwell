@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'feature_benefits_ebook' );
 if ( ! empty( $data ) ):
 	?>
@@ -9,15 +10,12 @@ if ( ! empty( $data ) ):
 					<?php if ( ! empty( $data['top_title'] ) ): ?>
                         <span
                                 class="rounded-md border border-primary bg-primary/20 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary">
-                <?php echo $data['top_title'] ?>
-            </span>
+                            <?php echo $data['top_title'] ?>
+                        </span>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $data['title'] ) ): ?>
-                        <h2 class="my-5 text-4xl font-medium text-default-950 md:text-4xl/tight">
-							<?php echo $data['title'] ?>
-
-                        </h2>
+						<?php print_heading( $blocks_list, $block['name'], $data['title'], 'mt-5 text-4xl font-medium text-default-950' ); ?>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $data['description'] ) ): ?>

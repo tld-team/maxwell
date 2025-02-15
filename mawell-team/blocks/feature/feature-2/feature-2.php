@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'feature_2' );
 if ( ! empty( $data ) ):
 	?>
@@ -22,9 +23,7 @@ if ( ! empty( $data ) ):
                     </span>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['title'] ) ): ?>
-                        <h2 class="mt-4 text-4xl/tight font-medium text-default-950">
-							<?php echo $data['title']; ?>
-                        </h2>
+						<?php print_heading( $blocks_list, $block['name'], $data['title'], 'mt-4 text-4xl/tight font-medium text-default-950' ); ?>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $data['content'] ) ): ?>

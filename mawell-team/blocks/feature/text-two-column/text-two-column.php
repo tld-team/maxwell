@@ -1,4 +1,6 @@
 <?php
+global $blocks_list;
+
 $data = get_field( 'text_two_column' );
 if ( ! empty( $data ) ):
 	?>
@@ -8,7 +10,7 @@ if ( ! empty( $data ) ):
             <div class="flex flex-col space-y-8">
 				<?php if ( ! empty( $data['title'] ) ): ?>
                     <div class="text-center lg:text-left">
-                        <h2 class="text-3xl font-bold mb-4"><?php echo $data['title']; ?></h2>
+	                    <?php print_heading( $blocks_list, $block['name'], $data['title'], 'text-3xl font-bold mb-4' ); ?>
                     </div>
 				<?php endif; ?>
 				<?php if ( ! empty( $data['content_left'] ) || ! empty( $data['content_right'] ) ): ?>

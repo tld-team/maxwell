@@ -1,9 +1,7 @@
 <?php
-$data = get_field( 'logo_portfolio' );
+global $blocks_list;
+$data = get_field( 'faq_agency_2' );
 if ( ! empty( $data ) ):
-?>
-<?php
-
 $top_title = $data['top_title' ];
 $title = $data['title'];
 $image = $data['image' ];
@@ -22,9 +20,7 @@ $questions = $data['questions' ];
                 </span>
                 <?php endif; ?>
                 <?php if ( !empty($top_title) || !empty($title) ): ?>
-                <h2 class="my-4 text-3xl font-medium capitalize text-default-950">
-                    <?php echo $title; ?>
-                </h2>
+	                <?php print_heading($blocks_list, $block['name'],$title, 'my-4 text-3xl font-medium capitalize text-default-950' );?>
                 <?php endif; ?>
             </div>
         </div><!-- flex End-->
@@ -54,7 +50,7 @@ $questions = $data['questions' ];
                             class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
                             aria-labelledby="faq-1">
                             <div class="px-6 pb-4 pt-0">
-                                <div class="text-sm"><?php apply_filters( 'the_content', $question['answer'] ); ?></div>
+                                <div class="text-sm"><?php echo apply_filters( 'the_content', $question['answer'] ); ?></div>
                             </div>
                         </div>
                     </div><!-- col End-->
@@ -70,60 +66,13 @@ $questions = $data['questions' ];
                             <div id="faq-<?php echo $index?>"
                                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                                  aria-labelledby="faq-<?php echo $index?>">
-                                <div class="px-6 pb-4 pt-0">
-                                    <div class="text-sm"><?php apply_filters( 'the_content', $question['answer'] ); ?></div>
+                                <div class="px-6 pb-4 pt-0 text-sm">
+                                    <?php echo apply_filters( 'the_content', $question['answer'] ); ?>
                                 </div>
                             </div>
                         </div><!-- col End-->
                         <?php endif; ?>
                     <?php endforeach; ?>
-
-
-
-                    <!--<div class="hs-accordion overflow-hidden rounded-lg border border-default-200" id="faq-3">
-                        <button
-                            class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-4 text-left capitalize text-default-950 transition-all"
-                            aria-controls="faq-3">
-                            <h5 class="flex text-base font-medium">
-What services does [Your Digital Agency] offer?
-                            </h5>
-                            <i data-lucide="chevron-up"
-                                class="size-4 transition-all duration-300 hs-accordion-active:-rotate-180"></i>
-                        </button>
-                        <div id="faq-3"
-                            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-                            aria-labelledby="faq-3">
-                            <div class="px-6 pb-4 pt-0">
-                                <p class="text-sm">
-provides a comprehensive range of digital services,
-                                    including website design and development, digital
-                                    marketing, search engine optimization
-</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hs-accordion overflow-hidden rounded-lg border border-default-200" id="faq-2">
-                        <button
-                            class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-4 text-left capitalize text-default-950 transition-all"
-                            aria-controls="faq-2">
-                            <h5 class="flex text-base font-medium">
-Can help with content creation and social media management?
-                            </h5>
-                            <i data-lucide="chevron-up"
-                                class="size-4 transition-all duration-300 hs-accordion-active:-rotate-180"></i>
-                        </button>
-                        <div id="faq-2"
-                            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-                            aria-labelledby="faq-2">
-                            <div class="px-6 pb-4 pt-0">
-                                <p class="text-sm">
-Absolutely! We offer content creation services, including
-                                    blog posts, social media content, and multimedia assets.
-                                </p>
-                            </div>
-                        </div>
-                    </div>-->
                 </div>
             </div>
             <!-- col End-->

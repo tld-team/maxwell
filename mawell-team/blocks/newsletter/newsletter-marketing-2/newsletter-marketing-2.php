@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'newsletter_marketing_2' );
 if ( ! empty( $data ) ):
 	?>
@@ -17,9 +18,7 @@ if ( ! empty( $data ) ):
                 <div class="grid gap-6 lg:grid-cols-2">
                     <div>
 						<?php if ( ! empty( $data['title'] ) ): ?>
-                            <h2 class="mb-4 text-4xl font-medium text-white">
-                                <?php echo $data['title']; ?>
-                            </h2>
+							<?php print_heading( $blocks_list, $block['name'], $data['title'], 'mb-4 text-4xl font-medium text-white' ); ?>
 						<?php endif; ?>
 						<?php if ( ! empty( $data['description'] ) ): ?>
                             <div class="mb-10 text-lg text-zinc-300">

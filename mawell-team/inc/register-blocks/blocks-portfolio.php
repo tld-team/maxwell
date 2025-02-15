@@ -35,6 +35,7 @@ function acf_blocks_init_portfolio(): void {
                 'jsx'   => true,
             ),
             'render_template' => 'blocks/portfolio/portfolio-marketing-2/portfolio-marketing-2.php',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials_swiper.js',
         ) );
 
         /** ==============================

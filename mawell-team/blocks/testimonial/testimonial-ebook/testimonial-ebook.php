@@ -34,7 +34,7 @@
                                 <div class="pt-3">
                                     <div class="flex items-center gap-6">
                                         <div>
-                                            <img src="<?php echo get_template_directory_uri() .'/examples/static/images/avatars/img-1.jpg' ?>" class="h-14 rounded-full"
+                                            <img src="<?php echo get_template_directory_uri() .'/examples/static/images/avatars/img-1.jpg' ?>" class="h-14 w-14 rounded-full"
                                                  alt="" />
                                         </div>
                                         <div>
@@ -68,7 +68,7 @@
                                 <div class="pt-3">
                                     <div class="flex items-center gap-6">
                                         <div>
-                                            <img src="<?php echo get_template_directory_uri() .'/examples/static/images/avatars/img-2.jpg' ?>" class="h-14 rounded-full"
+                                            <img src="<?php echo get_template_directory_uri() .'/examples/static/images/avatars/img-2.jpg' ?>" class="h-14 w-14 rounded-full"
                                                  alt="" />
                                         </div>
                                         <div>

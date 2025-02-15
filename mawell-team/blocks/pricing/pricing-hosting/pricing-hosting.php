@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'pricing_hosting' );
 if ( ! empty( $data ) ):
 	?>
@@ -6,9 +7,8 @@ if ( ! empty( $data ) ):
         <div class="container">
             <div class="mx-auto mb-12 max-w-xl text-center">
 				<?php if ( ! empty( $data['title'] ) ): ?>
-                    <h2 class="text-3xl font-medium text-default-950 md:text-4xl">
-						<?php echo $data['title']; ?>
-                    </h2>
+					<?php print_heading( $blocks_list, $block['name'], $data['title'], 'text-3xl font-medium text-default-950 md:text-4xl' ); ?>
+
 				<?php endif; ?>
             </div>
 

@@ -1,4 +1,6 @@
 <?php
+global $blocks_list;
+
 $top_title = get_field('post_list_development_top_title');
 $title = get_field('post_list_development_title');
 $content = get_field('post_list_development_content');
@@ -18,9 +20,7 @@ $landings = maxwell_get_post_list_development($post_fields);
                 </span>
                 <?php endif; ?>
                 <?php if (!empty($title)): ?>
-                    <h2 class="mb-2.5 text-3xl font-semibold text-default-950">
-                        <?php echo $title; ?>
-                    </h2>
+	                <?php print_heading( $blocks_list, $block['name'], $data['title'], 'mb-2.5 text-3xl font-semibold text-default-950' ); ?>
                 <?php endif; ?>
 
                 <?php if (!empty($content)): ?>

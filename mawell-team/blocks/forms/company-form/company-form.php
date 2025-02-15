@@ -1,4 +1,6 @@
 <?php
+global $blocks_list;
+
 $data = get_field( 'company_form' );
 if ( ! empty( $data ) ):
 	?>
@@ -12,9 +14,7 @@ if ( ! empty( $data ) ):
         <div class="grid grid-cols-1 items-center gap-6 xl:grid-cols-2">
                 <div>
 					<?php if ( ! empty( $data['title'] ) ): ?>
-                        <h2 class="text-3xl font-medium text-default-950 md:text-4xl">
-							<?php echo $data['title']; ?>
-                        </h2>
+						<?php print_heading( $blocks_list, $block['name'], $data['title'], 'text-3xl font-medium text-default-950 md:text-4xl' ); ?>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['content'] ) ): ?>
                         <div class="my-5 text-base font-medium text-default-600">

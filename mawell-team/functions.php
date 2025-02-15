@@ -229,9 +229,6 @@ function maxxwell_scripts()
         wp_enqueue_script('comment-reply');
     }
 
-    /** enqueue  custom file CSS */
-    wp_enqueue_script('alpine-js', get_template_directory_uri() . '/assets/dist/js/gallery.js', array(), _S_VERSION, true);
-
 
 	// Enqueue JavaScript fajlova za frontend
 	wp_enqueue_script('head-js', get_template_directory_uri() . '/assets/dist/js/head.js', array('jquery'), null, true);
@@ -251,22 +248,23 @@ function tailwind_dashboards_script($hook): void
 {
     $screen = get_current_screen();
     if ($screen->is_block_editor) {
-        wp_enqueue_style('tailwind-dashboard', get_template_directory_uri() . '/style.css');
+
+	    wp_enqueue_style('maxxwell-style', get_stylesheet_uri(), array(), _S_VERSION);
+	    wp_style_add_data('maxxwell-style', 'rtl', 'replace');
 
 	    // Dodavanje lokalnih CSS fajlova (Swiper i GLightbox)
 	    wp_enqueue_style('swiper-style', get_template_directory_uri() . '/assets/dist/css/swiper-bundle.css', array(), null);
-	    wp_enqueue_style('glightbox-style', get_template_directory_uri() . '/assets/dist/css/lightbox.css', array(), null);
+
 	    // Dodavanje eksternog CSS fajla (Tabler Icons)
 	    wp_enqueue_style('tabler-icons', get_template_directory_uri() . '/assets/dist/css/tabler-icons.min.css', array(), null);
 
-
-	    wp_enqueue_script('alpine-js', get_template_directory_uri() . '/assets/dist/js/alpinejs@2.js', array(), _S_VERSION, true);
-	    wp_enqueue_script('auth-js', get_template_directory_uri() . '/assets/dist/js/auth.js', array('jquery'), null, true);
-		wp_enqueue_script('glightbox-js', get_template_directory_uri() . '/assets/dist/js/glightbox.js', array('jquery'), null, true);
+	    // Enqueue JavaScript fajlova za frontend
 	    wp_enqueue_script('head-js', get_template_directory_uri() . '/assets/dist/js/head.js', array('jquery'), null, true);
 	    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/dist/js/swiper.js', array('jquery'), null, true);
+//	    wp_enqueue_script('theme-js', get_template_directory_uri() . '/assets/dist/js/theme.js', array('jquery'), null, true);
+	    wp_enqueue_script('lucide-icons', 'https://unpkg.com/lucide@latest', array(), null, true);
+	    wp_enqueue_script('custom_dashboard', get_template_directory_uri() . '/assets/dist/js/custom_dashboard.js', array(), null, true);
 
-	    wp_enqueue_script('theme-js', get_template_directory_uri() . '/assets/dist/js/theme.js', array('jquery'), null, true);
 	}
 }
 add_action('admin_enqueue_scripts', 'tailwind_dashboards_script');
@@ -332,5 +330,95 @@ if ($php_files) {
     // Including file
     foreach ($php_files as $php_file) {
         include $php_file;
+    }
+}
+
+/**
+ * @param $post_id
+ * @param $post
+ * @param $update
+ * @description kreiranje post mete za svaku stranicu kako bi se videli svi blokovi i rdosled blokova
+ * @return void
+ */
+function maxwell_create_acf_blocks_list($post_id, $post, $update) {
+	// Proverite da li je post objavljen ili ažuriran
+	if (wp_is_post_revision($post_id)) { return; }
+	if (has_blocks($post->post_content)) {
+		$blocks = parse_blocks($post->post_content);
+		$acf_blocks = [];
+		foreach ($blocks as $key=>$block) {
+			if (isset($block['blockName'])) {
+				$acf_blocks[ $key ] = $block['blockName'];
+			}
+		}
+
+		if (!empty($acf_blocks)) {
+			update_post_meta($post_id, '_acf_blocks_list', $acf_blocks);
+		} else {
+			delete_post_meta($post_id, '_acf_blocks_list');
+		}
+	} else {
+		delete_post_meta($post_id, '_acf_blocks_list');
+	}
+}
+add_action('save_post', 'maxwell_create_acf_blocks_list', 10, 3);
+
+
+/**
+ * @param $post_id
+ * @description Prisanje custom post mete za block list kako ne bi trpala bazu
+ * @return void
+ */
+function maxwell_delete_post_meta_acf_blocks_list($post_id) {
+	$custom_meta = get_post_meta($post_id, 'custom_meta_key', true);
+
+	if (!empty($custom_meta)) {
+		delete_post_meta($post_id, 'custom_meta_key');
+	}
+}
+add_action('delete_post', 'maxwell_delete_post_meta_acf_blocks_list', 10, 1);
+
+
+function load_global_acf_blocks_list() {
+	global $blocks_list;
+
+	// Proverite da li su podaci već učitani
+	if (isset($blocks_list)) {
+		return;
+	}
+
+	// Dohvatanje ID-a trenutnog posta
+	$post_id = get_queried_object_id();
+
+	// Ako post_id nije validan, postavimo prazan niz i prekinemo funkciju
+	if (!$post_id || $post_id === 0) {
+		$global_acf_blocks_list = [];
+		return;
+	}
+	// Dohvatite podatke iz post_meta
+	$blocks_list = get_post_meta($post_id, '_acf_blocks_list', true);
+
+	// Ako podaci nisu pronađeni, postavite prazan niz
+	if (empty($blocks_list)) {
+		$blocks_list = [];
+	}
+}
+add_action('template_redirect', 'load_global_acf_blocks_list', 10);
+
+function print_heading( $order, $block_name, $title='', $class='', $args=[]): void {
+	if (isset($order[0])) {
+		if ($order[0] === $block_name) {
+			?>
+				<h1 class="<?php echo $class ?>"><?php echo $title; ?></h1>
+			<?php
+		} else {
+			?>
+			<h2 class="<?php echo $class ?>"><?php echo $title; ?></h2>
+			<?php
+		}
+	} else {
+        ?>
+        <h2 class="<?php echo $class ?>"><?php echo $title; ?></h2>
+        <?php
     }
 }

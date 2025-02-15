@@ -1,4 +1,6 @@
 <?php
+global $blocks_list;
+
 $data = get_field( 'text_one_column' );
 if ( ! empty( $data ) ):
 	?>
@@ -10,7 +12,7 @@ if ( ! empty( $data ) ):
                     <div class="text-center lg:text-left">
 
 						<?php if ( ! empty( $data['title'] ) ): ?>
-                            <h2 class="text-3xl font-bold mb-4"><?php echo $data['title']; ?></h2>
+							<?php print_heading( $blocks_list, $block['name'], $data['title'], 'text-3xl font-bold mb-4' ); ?>
 						<?php endif; ?>
 
 						<?php if ( ! empty( $data['content'] ) ): ?>

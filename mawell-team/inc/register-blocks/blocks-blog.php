@@ -89,6 +89,7 @@ function acf_blocks_init_blog(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/blog/blog-company/blog-company.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials_swiper.js',
 		) );
 
 		/** ==============================

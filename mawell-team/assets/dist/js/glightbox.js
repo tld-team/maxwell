@@ -89,14 +89,12 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var glightbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! glightbox */ "./node_modules/glightbox/dist/js/glightbox.min.js");
 /* harmony import */ var glightbox__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(glightbox__WEBPACK_IMPORTED_MODULE_0__);
-//
-// glightbox.js
-//
 
-
-var lightbox = glightbox__WEBPACK_IMPORTED_MODULE_0___default()({
-  selector: ".glightbox",
-  title: !1
+document.addEventListener("DOMContentLoaded", function () {
+  var lightbox = glightbox__WEBPACK_IMPORTED_MODULE_0___default()({
+    selector: ".glightbox",
+    title: false // umesto !1, koristi false jer je čitljivije
+  });
 });
 })();
 

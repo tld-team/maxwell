@@ -20,7 +20,7 @@
                     <div class="mb-6 flex items-center gap-5">
                         <img
                             src="<?php echo get_template_directory_uri() .'/examples/static/images/avatars/img-1.jpg' ?>"
-                            class="h-14 rounded-full"
+                            class="h-14 w-14 rounded-full"
                             alt=""
                         />
                         <div>
@@ -47,7 +47,7 @@
                     <div class="mb-6 flex items-center gap-5">
                         <img
                             src="<?php echo get_template_directory_uri() .'/examples/static/images/avatars/img-3.jpg' ?>"
-                            class="h-14 rounded-full"
+                            class="h-14 w-14 rounded-full"
                             alt=""
                         />
                         <div>

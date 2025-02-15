@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'service_creative' );
 if ( ! empty( $data ) ):
 ?>
@@ -16,9 +17,8 @@ if ( ! empty( $data ) ):
                         <?php endif; ?>
 
 	                    <?php if ( ! empty( $data['title'] ) ): ?>
-                            <h2 class="my-4 text-4xl font-medium text-default-950">
-			                    <?php echo $data['title']; ?>
-                            </h2>
+		                    <?php print_heading( $blocks_list, $block['name'], $data['title'], 'my-4 text-4xl font-medium text-default-950' ); ?>
+
 	                    <?php endif; ?>
                         <?php if ($data['content']): ?>
                         <div class="mt-5 text-base">

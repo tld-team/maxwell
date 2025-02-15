@@ -1,4 +1,6 @@
 <?php
+global $blocks_list;
+
 $hero_company = get_field( 'hero_company' );
 if ( ! empty( $hero_company ) ):
 	$data = $hero_company
@@ -20,10 +22,7 @@ if ( ! empty( $hero_company ) ):
 					<?php endif; ?>
 
 					<?php if ( ! empty( $data['title'] ) ): ?>
-                        <h1 class="my-4 max-w-lg text-4xl font-medium text-default-950 md:text-4xl/tight">
-	                        <?php echo $data['title']; ?>
-                        </h1>
-
+						<?php print_heading( $blocks_list, $block['name'], $data['title'], 'my-4 max-w-lg text-4xl font-medium text-default-950 md:text-4xl/tight' ); ?>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['content'] ) ): ?>
                         <div class="md:text-lg">

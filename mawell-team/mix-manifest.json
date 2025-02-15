@@ -1,9 +1,12 @@
 {
     "/assets/dist/js/gallery.js": "/assets/dist/js/gallery.js",
-    "/assets/dist/js/admin.js": "/assets/dist/js/admin.js",
-    "/assets/dist/js/auth.js": "/assets/dist/js/auth.js",
-    "/assets/dist/js/glightbox.js": "/assets/dist/js/glightbox.js",
     "/assets/dist/js/head.js": "/assets/dist/js/head.js",
     "/assets/dist/js/swiper.js": "/assets/dist/js/swiper.js",
-    "/assets/dist/js/theme.js": "/assets/dist/js/theme.js"
+    "/assets/dist/js/feedback_swiper.js": "/assets/dist/js/feedback_swiper.js",
+    "/assets/dist/js/testimonials_swiper.js": "/assets/dist/js/testimonials_swiper.js",
+    "/assets/dist/js/testimonials.js": "/assets/dist/js/testimonials.js",
+    "/assets/dist/js/testimonial_directory.js": "/assets/dist/js/testimonial_directory.js",
+    "/assets/dist/js/hero_swiper.js": "/assets/dist/js/hero_swiper.js",
+    "/assets/dist/js/theme.js": "/assets/dist/js/theme.js",
+    "/assets/dist/js/custom_dashboard.js": "/assets/dist/js/custom_dashboard.js"
 }

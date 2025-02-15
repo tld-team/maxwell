@@ -1,7 +1,8 @@
-//
-// glightbox.js
-//
-
 import GLightbox from "glightbox";
 
-var lightbox = GLightbox({ selector: ".glightbox", title: !1 });
+document.addEventListener("DOMContentLoaded", function () {
+    var lightbox = GLightbox({
+        selector: ".glightbox",
+        title: false // umesto !1, koristi false jer je čitljivije
+    });
+});

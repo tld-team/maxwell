@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'about_ebook' );
 if ( ! empty( $data ) ):
 	?>
@@ -23,9 +24,7 @@ if ( ! empty( $data ) ):
 
 
 					<?php if ( ! empty( $data['title'] ) ): ?>
-                        <h2 class="mt-5 text-4xl font-medium text-default-950">
-	                        <?php echo $data['title']; ?>
-                        </h2>
+                    <?php print_heading($blocks_list, $block['name'],$data['title'], 'mt-5 text-4xl font-medium text-default-950' );?>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['content'] ) ): ?>
                         <div class="mt-4 text-base">

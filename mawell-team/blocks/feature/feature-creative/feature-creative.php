@@ -1,7 +1,10 @@
-<?php $data = get_field( 'feature_creative' );
+<?php
+global $blocks_list;
+
+$data = get_field( 'feature_creative' );
 if ( ! empty( $data ) ):
 	?>
-    <section id="features" class="py-10 lg:py-20 <?php echo !empty($block["className"]) ?? $block["className"];; ?>">
+    <section id="features" class="py-10 lg:py-20 <?php echo ! empty( $block["className"] ) ?? $block["className"];; ?>">
         <div class="container">
             <div class="mb-10 flex items-end justify-between">
 				<?php if ( ! empty( $data['top_title'] ) || ! empty( $data['title'] ) || ! empty( $data['description'] ) ): ?>
@@ -12,9 +15,7 @@ if ( ! empty( $data ) ):
                 </span>
 						<?php endif ?>
 						<?php if ( ! empty( $data['title'] ) ): ?>
-                            <h2 class="mt-4 text-4xl font-medium capitalize text-default-950">
-								<?php echo $data['title']; ?>
-                            </h2>
+							<?php print_heading( $blocks_list, $block['name'], $data['title'], 'mt-4 text-4xl font-medium capitalize text-default-950' ); ?>
 						<?php endif ?>
 						<?php if ( ! empty( $data['description'] ) ): ?>
 							<?php echo $data['description']; ?>
@@ -56,15 +57,15 @@ if ( ! empty( $data ) ):
 			<?php endif; ?>
 
 
-	        <?php if ( ! empty( $data['link'] ) ): ?>
-            <div class="mt-4 flex justify-center">
-                <a href="<?php echo $data['link']['url']; ?>"
-                   class="inline-flex items-center justify-center gap-2 rounded-md border border-primary/50 bg-primary px-6 py-2 text-white transition-all duration-300 hover:bg-primary/10 hover:text-primary">
-			        <?php echo $data['link']['title']; ?>
-                    <i data-lucide="arrow-up-right" class="size-6"></i>
-                </a>
+			<?php if ( ! empty( $data['link'] ) ): ?>
+                <div class="mt-4 flex justify-center">
+                    <a href="<?php echo $data['link']['url']; ?>"
+                       class="inline-flex items-center justify-center gap-2 rounded-md border border-primary/50 bg-primary px-6 py-2 text-white transition-all duration-300 hover:bg-primary/10 hover:text-primary">
+						<?php echo $data['link']['title']; ?>
+                        <i data-lucide="arrow-up-right" class="size-6"></i>
+                    </a>
                 </div>
-	        <?php endif; ?>
+			<?php endif; ?>
         </div>
         <!-- container End -->
     </section>

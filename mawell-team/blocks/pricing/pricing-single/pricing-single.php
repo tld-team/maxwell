@@ -1,4 +1,5 @@
 <?php
+global $blocks_list;
 $data = get_field( 'pricing_single' );
 if ( ! empty( $data ) ):
 	?>
@@ -13,9 +14,8 @@ if ( ! empty( $data ) ):
                                     <div class="grid gap-6 md:grid-cols-3">
                                         <div class="md:col-span-2">
 											<?php if ( ! empty( $data['title'] ) ): ?>
-                                                <h2 class="text-2xl font-medium text-default-950">
-	                                                <?php echo $data['title']; ?>
-                                                </h2>
+												<?php print_heading( $blocks_list, $block['name'], $data['title'], 'text-2xl font-medium text-default-950' ); ?>
+
 											<?php endif; ?>
 											<?php if ( ! empty( $data['subtitle'] ) ): ?>
                                                 <p class="mt-2 text-xs uppercase tracking-widest text-default-950">

@@ -4,6 +4,8 @@ $subtitle = get_field( 'hero_agency_2_subtitle' );
 $link = get_field( 'hero_agency_2_link' );
 $bg_image = get_field( 'hero_agency_2_bg_image' );
 $image = get_field( 'hero_agency_2_image' );
+global $blocks_list;
+
 ?>
 <!-- Hero Section Start -->
 <?php if (!empty($bg_image)): ?>
@@ -18,9 +20,8 @@ $image = get_field( 'hero_agency_2_image' );
             <div>
                 <div class="max-w-lg text-center lg:text-start">
                     <?php if (!empty($title)): ?>
-                    <h2 class="text-4xl font-medium text-default-950 sm:text-5xl lg:text-6xl/tight">
-                        <?php echo $title ?>
-                    </h2>
+	                    <?php print_heading( $blocks_list, $block['name'], $title, 'mt-5 text-4xl font-medium text-default-950' ); ?>
+
                     <?php endif; ?>
                     <?php if (!empty($subtitle)): ?>
                     <div class="my-6 text-base">

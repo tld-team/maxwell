@@ -7,7 +7,7 @@
  * Kreiranje funkcije koja vraca svve menije kreirane u appearance i vezuje se moje selekt polje
  */
 function maxwell_acf_load_menu_choices( $field ): mixed {
-	maxxwell_log( sprintf( "%s", print_r( $field, true ) ), 'w' );
+//	maxxwell_log( sprintf( "%s", print_r( $field, true ) ), 'w' );
 	// Get all menus
 	$menus = get_terms( array(
 		'taxonomy' => 'nav_menu',

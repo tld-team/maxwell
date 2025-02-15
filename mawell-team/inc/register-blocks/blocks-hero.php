@@ -19,6 +19,7 @@ function acf_blocks_init_hero(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/hero/hero-agency-1/hero-agency-1.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/hero_swiper.js',
 		) );
 
 

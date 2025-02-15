@@ -35,6 +35,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonials-charity/testimonials-charity.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials_swiper.js',
 		) );
 
 		/** ==============================
@@ -52,6 +53,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-company/testimonial-company.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/gallery.js',
 		) );
 
 		/** ==============================
@@ -69,6 +71,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-creative/testimonial-creative.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials.js',
 		) );
 
 		/** ==============================
@@ -86,6 +89,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-ebook/testimonial-ebook.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials.js',
 		) );
 
 		/** ==============================
@@ -137,6 +141,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-marketing/testimonial-marketing.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials.js',
 		) );
 
 		/** ==============================
@@ -154,6 +159,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-marketing-2/testimonial-marketing-2.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials.js',
 		) );
 
 		/** ==============================
@@ -171,6 +177,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-portfolio/testimonial-portfolio.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials.js',
 		) );
 
 		/** ==============================
@@ -188,6 +195,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-portfolio-2/testimonial-portfolio-2.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials.js',
 		) );
 
 		/** ==============================
@@ -205,6 +213,7 @@ function acf_blocks_init_testimonial(): void {
 				'jsx'   => true,
 			),
 			'render_template' => 'blocks/testimonial/testimonial-startup/testimonial-startup.php',
+			'enqueue_script'    => get_template_directory_uri() . '/assets/dist/js/testimonials.js',
 		) );
 	}
 }
