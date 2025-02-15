@@ -220,7 +220,7 @@ function maxxwell_scripts()
 	wp_enqueue_style('glightbox-style', get_template_directory_uri() . '/assets/dist/css/lightbox.css', array(), null);
 
 	// Dodavanje eksternog CSS fajla (Tabler Icons)
-	wp_enqueue_style('tabler-icons', get_template_directory_uri() . '/assets/dist/css/tabler-icons.min.css', array(), null);
+//	wp_enqueue_style('tabler-icons', get_template_directory_uri() . '/assets/dist/css/tabler-icons.min.css', array(), null);
 
 
 	wp_enqueue_script('maxxwell-navigation', get_template_directory_uri() . '/assets/dist/js/navigation.js', array(), _S_VERSION, true);
@@ -231,9 +231,9 @@ function maxxwell_scripts()
 
 
 	// Enqueue JavaScript fajlova za frontend
-	wp_enqueue_script('head-js', get_template_directory_uri() . '/assets/dist/js/head.js', array('jquery'), null, true);
-	wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/dist/js/swiper.js', array('jquery'), null, true);
-	wp_enqueue_script('theme-js', get_template_directory_uri() . '/assets/dist/js/theme.js', array('jquery'), null, true);
+	wp_enqueue_script('head-js', get_template_directory_uri() . '/assets/dist/js/head.js', [], null, true);
+	wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/dist/js/swiper.js', [], null, true);
+	wp_enqueue_script('theme-js', get_template_directory_uri() . '/assets/dist/js/theme.js', [], null, true);
 }
 add_action('wp_enqueue_scripts', 'maxxwell_scripts');
 
