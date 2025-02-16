@@ -74,7 +74,7 @@
                                             <div class="inline-flex size-10 items-center justify-center rounded-lg border border-default-300 text-default-800 transition-all group-hover:border-primary group-hover:bg-primary group-hover:text-white">
                                                 <i data-lucide="<?php echo $item['lucide_icon']; ?>" class="size-5"></i>
                                             </div>
-                                            <h2 class="text-base font-medium text-default-800"><?php echo $item['title']; ?></h2>
+                                            <h3 class="text-base font-medium text-default-800"><?php echo $item['title']; ?></h3>
                                         </a>
 									<?php endforeach; ?>
                                 </div>
