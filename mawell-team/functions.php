@@ -212,6 +212,9 @@ add_action( 'upload_mimes', 'add_file_types_to_uploads' );
  * Enqueue scripts and styles. */
 function maxxwell_scripts()
 {
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+
     wp_enqueue_style('maxxwell-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_style_add_data('maxxwell-style', 'rtl', 'replace');
 
