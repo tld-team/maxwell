@@ -265,9 +265,11 @@ function tailwind_dashboards_script($hook): void
 	    wp_enqueue_script('head-js', get_template_directory_uri() . '/assets/dist/js/head.js', array(), null, true);
 //	    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/dist/js/swiper.js', array('jquery'), null, true);
 //	    wp_enqueue_script('theme-js', get_template_directory_uri() . '/assets/dist/js/theme.js', array('jquery'), null, true);
-	    wp_enqueue_script('lucide-icons', 'https://unpkg.com/lucide@latest', array(), null, true);
+//	    wp_enqueue_script('lucide-icons', 'https://unpkg.com/lucide@latest', array(), null, true);
 	    wp_enqueue_script('custom_dashboard', get_template_directory_uri() . '/assets/dist/js/custom_dashboard.js', array(), null, true);
-
+	    if ($hook === 'post.php' || $hook === 'post-new.php') {
+		    wp_enqueue_script( 'preline', get_template_directory_uri() . '/assets/dist/js/preline.min.js', array(), null, true );
+	    }
 	}
 }
 add_action('admin_enqueue_scripts', 'tailwind_dashboards_script');
