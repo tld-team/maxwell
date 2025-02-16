@@ -38,7 +38,7 @@ module.exports = {
       colors: {
         primary: {
           ...colors.blue,
-          DEFAULT: colors.blue["600"],
+          DEFAULT: colors.blue["950"],
         },
       },
 
