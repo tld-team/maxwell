@@ -5,7 +5,7 @@ Author: coderthemes
 Email: support@coderthemes.com
 */
 
-//import "preline";
+import "preline";
 import { createIcons, icons } from "lucide";
 import gumshoeMin from "gumshoejs";
 
