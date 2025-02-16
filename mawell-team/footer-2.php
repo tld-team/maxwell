@@ -42,9 +42,9 @@
 					?>
                     <div class="">
 						<?php $menu_object = wp_get_nav_menu_object( $footer['footer_1_menu_1'] ); ?>
-                        <h5 class="mb-4 font-medium text-default-800 lg:text-lg xl:text-xl">
+                        <h2 class="mb-4 font-medium text-default-800 lg:text-lg xl:text-xl">
 							<?php echo $menu_object->name ?>
-                        </h5>
+                        </h2>
                         <ul class="flex flex-col gap-3">
 							<?php foreach ( $menu_1 as $index => $item ) : ?>
                                 <li>
@@ -61,11 +61,11 @@
 				$social_media = get_field( 'social_media', 'option' );
 				if ( ! empty( $social_media ) ): ?>
                     <div class="">
-                        <ul class="flex flex-col gap-3">
+                        <div class="flex flex-col gap-3">
 							<?php if ( ! empty( $social_media['name'] ) ): ?>
-                                <h5 class="mb-4 font-medium text-default-800 lg:text-lg xl:text-xl">
+                                <h2 class="mb-4 font-medium text-default-800 lg:text-lg xl:text-xl">
 									<?php echo $social_media['name']; ?>
-                                </h5>
+                                </h2>
 							<?php endif; ?>
 							<?php if ( ! empty( $social_media['items'] ) ): ?>
                                 <div class="space-y-3">
@@ -79,7 +79,7 @@
 									<?php endforeach; ?>
                                 </div>
 							<?php endif; ?>
-                        </ul>
+                        </div>
                     </div>
                     <!-- col End -->
 				<?php endif; ?>
@@ -91,9 +91,9 @@
 					?>
                     <div class="">
 						<?php $menu_object = wp_get_nav_menu_object( $footer['footer_1_menu_2'] ); ?>
-                        <h5 class="mb-4 font-medium text-default-800 lg:text-lg xl:text-xl">
+                        <h2 class="mb-4 font-medium text-default-800 lg:text-lg xl:text-xl">
 							<?php echo $menu_object->name ?>
-                        </h5>
+                        </h2>
                         <ul class="flex flex-col gap-3">
 							<?php foreach ( $menu_2 as $index => $item ) : ?>
                                 <li>
