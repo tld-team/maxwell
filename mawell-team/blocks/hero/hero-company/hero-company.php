@@ -31,11 +31,8 @@ if ( ! empty( $hero_company ) ):
 
 					<?php endif; ?>
 					<?php if ( ! empty( $data['link'] ) ) : ?>
-                        <div class="inline-block">
-                            <a href=" <?php echo $data['link']['url']; ?>"
-                               class="mt-6 flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-2 text-base font-medium text-white transition-all duration-300 hover:bg-primary-700">
-	                            <?php echo $data['link']['title']; ?>
-                            </a>
+                        <div class="inline-block mt-4">
+	                        <?php parse_link($data['link'], $icon='yes'); ?>
                         </div>
 					<?php endif; ?>
                 </div>

@@ -44,11 +44,14 @@ if ( ! empty( $data ) ):
                                     </div>
 								<?php endif; ?>
 								<?php if ( ! empty( $feature['link'] ) ): ?>
-                                    <a href="<?php echo $feature['link']['url']; ?>"
-                                       class="inline-flex items-center justify-center gap-2 rounded-md border border-primary/50 bg-primary px-6 py-2 text-white transition-all duration-300 hover:bg-primary/10 hover:text-primary">
-										<?php echo $feature['link']['title']; ?>
-                                        <i data-lucide="arrow-up-right" class="size-6"></i>
-                                    </a>
+                                    <?php $icon_svg = '
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                         class="inline-block size-6 opacity-0 transition-all duration-500 will-change-transform group-hover:translate-x-2 group-hover:opacity-100">
+                                        <path d="M18 8L22 12L18 16"/>
+                                        <path d="M2 12H22"/>
+                                    </svg>' ?>
+									<?php parse_link($feature['link'], $icon=$icon_svg, 'text-lg font-medium text-default-900'); ?>
 								<?php endif; ?>
                             </div>
                         </div>
@@ -59,11 +62,7 @@ if ( ! empty( $data ) ):
 
 			<?php if ( ! empty( $data['link'] ) ): ?>
                 <div class="mt-4 flex justify-center">
-                    <a href="<?php echo $data['link']['url']; ?>"
-                       class="inline-flex items-center justify-center gap-2 rounded-md border border-primary/50 bg-primary px-6 py-2 text-white transition-all duration-300 hover:bg-primary/10 hover:text-primary">
-						<?php echo $data['link']['title']; ?>
-                        <i data-lucide="arrow-up-right" class="size-6"></i>
-                    </a>
+	                <?php parse_link($data['link'], $icon='yes'); ?>
                 </div>
 			<?php endif; ?>
         </div>

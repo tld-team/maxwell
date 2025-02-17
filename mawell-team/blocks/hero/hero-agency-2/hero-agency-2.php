@@ -29,11 +29,7 @@ global $blocks_list;
                     </div>
                     <?php endif; ?>
                     <?php if (!empty($link)): ?>
-                        <a href="<?php echo $link['url'] ?>"
-                           class="inline-flex items-center justify-center gap-2 rounded-md bg-primary/90 px-8 py-3 text-base text-white transition-all duration-500 hover:bg-primary" title="<?php echo $link['title'] ?>">
-		                    <?php echo $link['title'] ?>
-                            <i data-lucide="move-right" class="size-6"></i>
-                        </a>
+                        <?php parse_link($link, $icon='yes'); ?>
                     <?php endif; ?>
                 </div>
             </div>

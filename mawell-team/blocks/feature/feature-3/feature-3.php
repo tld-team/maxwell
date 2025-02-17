@@ -25,14 +25,7 @@ if ( ! empty( $data ) ):
 
 					<?php if ( ! empty( $data['link'] ) ): ?>
                         <div class="group mt-5">
-                            <a
-                                    href="<?php echo $data['link']['url'] ?>"
-                                    class="inline-flex items-center justify-center gap-2 rounded-full bg-primary/20 px-4 py-2 text-sm text-primary transition-all duration-200 hover:bg-primary hover:text-white"
-                            >
-								<?php echo $data['link']['title'] ?>
-
-                                <i data-lucide="move-right" class="inline-block size-6"></i>
-                            </a>
+	                        <?php parse_link($data['link'], $icon='yes'); ?>
                         </div>
 
 					<?php endif; ?>

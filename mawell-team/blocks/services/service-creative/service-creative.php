@@ -80,8 +80,9 @@ if ( ! empty( $data ) ):
             <div class="relative overflow-hidden rounded-md">
                 <img
                     src="<?php echo $image['url'] ?>"
-                    class="h-full w-full rounded-md"
                     alt="<?php echo $image['alt'] ?>"
+                    srcset="<?php echo $image['srcset'] ?>"
+                    class="h-full w-full rounded-md"
                 />
                 <div class="absolute inset-0 bg-black/60"></div>
             </div>

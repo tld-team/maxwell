@@ -26,10 +26,7 @@ if ( ! empty( $data ) ):
                             </div>
 						<?php endif; ?>
 						<?php if ( ! empty( $data['link'] ) ): ?>
-                            <a href="<?php echo $data['link']['url']; ?>"
-                               class="rounded-md bg-primary px-6 py-3 text-sm text-white transition-all hover:bg-primary-700">
-                                <?php echo $data['link']['title'];  ?>
-                            </a>
+							<?php parse_link($data['link']); ?>
 						<?php endif; ?>
 						<?php if ( ! empty( $data['characteristics'] ) ): ?>
                             <div class="mt-10 grid gap-5 md:grid-cols-2">

@@ -5496,10 +5496,6 @@ select {
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-primary\/10:hover {
-  background-color: rgb(23 37 84 / 0.1);
-}
-
 .hover\:bg-purple-500\/5:hover {
   background-color: rgb(168 85 247 / 0.05);
 }
