@@ -1,6 +1,5 @@
 <?php
 global $blocks_list;
-
 $data = get_field( 'feature_creative' );
 if ( ! empty( $data ) ):
 	?>
@@ -27,7 +26,7 @@ if ( ! empty( $data ) ):
 			<?php if ( ! empty( $data['features'] ) ): ?>
                 <div class="grid grid-cols-1 items-center overflow-hidden rounded-md gap-3 md:grid-cols-2 xl:grid-cols-3">
 					<?php foreach ( $data['features'] as $index => $feature ) : ?>
-                        <div class="group h-full border border-default-200 bg-green-100">
+                        <div class="group p-10 h-full border border-default-200">
                             <div class="p-8 sm:p-10">
 								<?php if ( ! empty( $feature['icon'] ) ): ?>
                                     <span class=""><i data-lucide="<?php echo $feature['icon'] ?>"

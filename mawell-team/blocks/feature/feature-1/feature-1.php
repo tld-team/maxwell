@@ -13,7 +13,7 @@ if ( ! empty( $data ) ):
                 </span>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['title'] ) ): ?>
-                        <?php print_heading( $blocks_list, $block['name'], $data['title'], 'mt-4 text-4xl/tight font-medium text-default-950' ); ?>
+                        <?php print_heading( $blocks_list, $block['name'], $data['title'], 'mt-4' ); ?>
 					<?php endif; ?>
 					<?php if ( ! empty( $data['content'] ) ): ?>
                         <div class="mt-5 text-base text-default-900">
@@ -23,7 +23,6 @@ if ( ! empty( $data ) ):
 					<?php if ( ! empty( $data['link'] ) ): ?>
                         <div class="group mt-5">
 	                        <?php parse_link($data['link'], $icon='yes'); ?>
-
                         </div>
 					<?php endif; ?>
                 </div>
